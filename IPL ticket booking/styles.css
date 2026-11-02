@@ -1,0 +1,151 @@
+
+/* CSS Variables */
+:root {
+    --primary-color: #0b1f3a;
+    --accent-color: #ff6b00;
+    --background-color: #f4f6f9;
+    --text-color: #222222;
+}
+
+/* Body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+}
+
+/* Header */
+header {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 70px 20px 20px;
+}
+
+/* Navigation */
+nav {
+    background-color: var(--primary-color);
+    padding: 15px;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+}
+
+nav a:hover {
+    background-color: var(--accent-color);
+    border-radius: 5px;
+}
+
+/* Sections */
+section {
+    background-color: white;
+    padding: 25px;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px lightgray;
+}
+
+/* Headings */
+h1, h2, h3 {
+    color: var(--primary-color);
+}
+
+/* Hero Section */
+#home {
+    background: linear-gradient(to right, #0b1f3a, #315b91);
+    color: white;
+    text-align: center;
+    padding: 50px;
+}
+
+#home h2 {
+    color: white;
+}
+
+/* Buttons */
+button {
+    background-color: var(--accent-color);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #cc5500;
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 15px 0;
+}
+
+th {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+th, td {
+    border: 1px solid #cccccc;
+    padding: 10px;
+    text-align: center;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Forms */
+form {
+    padding: 20px;
+}
+
+input, select {
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+}
+
+input:focus, select:focus {
+    border-color: var(--accent-color);
+}
+
+/* Booking Summary */
+aside {
+    background-color: #fff3e6;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px lightgray;
+}
+
+/* Guidelines */
+article {
+    background-color: #f9f9f9;
+    padding: 15px;
+    margin: 10px 0;
+    border-left: 5px solid var(--accent-color);
+    border-radius: 5px;
+}
+
+/* Footer */
+footer {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+}
