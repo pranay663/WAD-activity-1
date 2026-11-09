@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>IPL Ticket Booking Form</title>
+</head>
+<body>
+
+    <h1>IPL Ticket Booking Form</h1>
+
+    <form>
+
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name"
+               required minlength="3" maxlength="30">
+        <br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <br><br>
+
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone"
+               pattern="[0-9]{10}" required>
+        <br><br>
+
+        <label for="match">Match Selection:</label>
+        <select id="match" name="match" required>
+            <option value="">Select Match</option>
+            <option>RCB vs CSK</option>
+            <option>MI vs KKR</option>
+            <option>SRH vs RCB</option>
+        </select>
+        <br><br>
+
+        <label for="stand">Stand Category:</label>
+        <select id="stand" name="stand" required>
+            <option value="">Select Stand</option>
+            <option>General</option>
+            <option>Premium</option>
+            <option>VIP</option>
+        </select>
+        <br><br>
+
+        <label for="tickets">Number of Tickets:</label>
+        <input type="number" id="tickets" name="tickets"
+               min="1" max="10" required>
+        <br><br>
+
+        <p>Payment Preference:</p>
+        <input type="radio" id="online" name="payment"
+               value="online" required>
+        <label for="online">Online</label>
+
+        <input type="radio" id="counter" name="payment"
+               value="counter">
+        <label for="counter">Counter</label>
+        <br><br>
+
+        <input type="checkbox" id="terms" required>
+        <label for="terms">I agree to the terms and conditions</label>
+        <br><br>
+
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+
+    </form>
+
+    <br>
+    <a href="index.html">Back to Home</a>
+
+</body>
+</html>
