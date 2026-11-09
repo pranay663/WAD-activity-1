@@ -6,8 +6,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IPL 2026 Ticket Booking</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
-<link rel="stylesheet" href="styles.css">
+
 <body>
 
     <!-- Navigation Bar -->
@@ -16,7 +17,7 @@
 
         <nav>
             <a href="#matches">Matches</a> |
-            <a href="#booking">Book Ticket</a> |
+            <a href="#booking" onclick="scrollToBooking(); return false;">Book Ticket</a> |
             <a href="#mybookings">My Bookings</a> |
             <a href="#guidelines">Guidelines</a>
         </nav>
@@ -34,7 +35,10 @@
             <p>Book your tickets and enjoy live cricket action!</p>
 
             <a href="#matches">View Schedule</a>
-            <a href="#booking">Book Ticket</a>
+
+            <a href="#booking" onclick="scrollToBooking(); return false;">
+                Book Ticket
+            </a>
         </section>
 
         <!-- About IPL -->
@@ -111,7 +115,7 @@
                     <td>₹800</td>
                     <td>₹2000</td>
                     <td>₹5000</td>
-                    <td><a href="#booking">Book</a></td>
+                    <td><a href="#booking" onclick="scrollToBooking(); return false;">Book</a></td>
                 </tr>
 
                 <tr>
@@ -122,7 +126,7 @@
                     <td>₹1000</td>
                     <td>₹2500</td>
                     <td>₹6000</td>
-                    <td><a href="#booking">Book</a></td>
+                    <td><a href="#booking" onclick="scrollToBooking(); return false;">Book</a></td>
                 </tr>
 
                 <tr>
@@ -133,7 +137,7 @@
                     <td>₹900</td>
                     <td>₹2200</td>
                     <td>₹5500</td>
-                    <td><a href="#booking">Book</a></td>
+                    <td><a href="#booking" onclick="scrollToBooking(); return false;">Book</a></td>
                 </tr>
 
                 <tr>
@@ -144,7 +148,7 @@
                     <td>₹800</td>
                     <td>₹1800</td>
                     <td>₹4500</td>
-                    <td><a href="#booking">Book</a></td>
+                    <td><a href="#booking" onclick="scrollToBooking(); return false;">Book</a></td>
                 </tr>
 
             </table>
@@ -261,6 +265,13 @@
     <footer>
         <p>&copy; 2026 IPL Ticket Booking. All Rights Reserved.</p>
     </footer>
+
+    <!-- Toast Notification -->
+    <div id="toast" style="display:none; position:fixed; bottom:20px; right:20px; background:black; color:white; padding:15px; border-radius:5px;">
+    </div>
+
+    <!-- JavaScript -->
+    <script src="app.js"></script>
 
 </body>
 </html>
