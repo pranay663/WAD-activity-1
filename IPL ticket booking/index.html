@@ -162,28 +162,27 @@
 
                 <label for="match">Select Match:</label>
 
-                <select id="match" name="match">
-                    <option>RCB vs MI</option>
-                    <option>CSK vs KKR</option>
-                    <option>DC vs SRH</option>
-                    <option>RR vs PBKS</option>
-                </select>
+              <select id="match" name="match">
+    <option value="RCB vs MI">RCB vs MI</option>
+    <option value="CSK vs KKR">CSK vs KKR</option>
+    <option value="DC vs SRH">DC vs SRH</option>
+    <option value="RR vs PBKS">RR vs PBKS</option>
+</select>
 
                 <br><br>
 
                 <label for="stand">Stand Category:</label>
 
                 <select id="stand" name="stand">
-                    <option>General</option>
-                    <option>Premium</option>
-                    <option>VIP</option>
-                </select>
-
+    <option value="General">General</option>
+    <option value="Premium">Premium</option>
+    <option value="VIP">VIP</option>
+</select>
                 <br><br>
 
                 <label for="quantity">Number of Tickets:</label>
                 <input type="number" id="quantity" name="quantity"
-                       min="1" max="10">
+       min="1" max="10" value="1">
 
                 <br><br>
 
@@ -206,16 +205,16 @@
 
             </form>
 
-            <!-- Booking Summary -->
-            <aside>
-                <h3>Booking Summary</h3>
+          <!-- Booking Summary -->
+<aside>
+    <h3>Booking Summary</h3>
 
-                <p>Selected Match: Not Selected</p>
-                <p>Stand: Not Selected</p>
-                <p>Ticket Price: ₹0</p>
-                <p>Quantity: 0</p>
-                <p>Total Amount: ₹0</p>
-            </aside>
+    <p>Selected Match: <span id="summaryMatch">RCB vs MI</span></p>
+    <p>Stand: <span id="summaryStand">General</span></p>
+    <p>Ticket Price: ₹<span id="summaryPrice">800</span></p>
+    <p>Quantity: <span id="summaryQuantity">1</span></p>
+    <p>Total Amount: ₹<span id="summaryTotal">800</span></p>
+</aside>
 
         </section>
 
