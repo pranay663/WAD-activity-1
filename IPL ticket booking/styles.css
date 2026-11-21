@@ -7,7 +7,15 @@
     --text-color: #222222;
 }
 
-/* Body */
+/* General Styling */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: Arial, sans-serif;
     background-color: var(--background-color);
@@ -15,60 +23,83 @@ body {
     margin: 0;
 }
 
-/* Header */
-header {
+/* Navigation using Flexbox */
+.navbar {
     background-color: var(--primary-color);
-    color: white;
-    text-align: center;
-    padding: 70px 20px 20px;
-}
-
-/* Navigation */
-nav {
-    background-color: var(--primary-color);
-    padding: 15px;
-    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 1000;
 }
 
-nav a {
+.logo {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    margin: 0;
+}
+
+.nav-links a {
     color: white;
     text-decoration: none;
     padding: 10px;
 }
 
-nav a:hover {
+.nav-links a:hover {
     background-color: var(--accent-color);
     border-radius: 5px;
+}
+
+/* Hamburger Menu */
+.menu-toggle {
+    display: none;
+    font-size: 24px;
 }
 
 /* Sections */
 section {
     background-color: white;
-    padding: 25px;
-    margin: 20px;
+    padding: 30px;
+    margin: 25px 20px;
     border-radius: 10px;
     box-shadow: 0 2px 5px lightgray;
+    scroll-margin-top: 75px;
 }
 
-/* Headings */
 h1, h2, h3 {
     color: var(--primary-color);
 }
 
+h2 {
+    text-align: center;
+}
+
 /* Hero Section */
-#home {
+.hero {
     background: linear-gradient(to right, #0b1f3a, #315b91);
     color: white;
     text-align: center;
-    padding: 50px;
+    padding: 80px 20px;
+    margin-top: 75px;
 }
 
-#home h2 {
+.hero h1 {
     color: white;
+    font-size: 36px;
+}
+
+.hero p {
+    font-size: 18px;
 }
 
 /* Buttons */
@@ -79,51 +110,65 @@ button {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    margin: 5px;
 }
 
 button:hover {
     background-color: #cc5500;
 }
 
-/* Tables */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 15px 0;
+/* Match Controls */
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 20px 0;
 }
 
-th {
-    background-color: var(--primary-color);
-    color: white;
-}
-
-th, td {
-    border: 1px solid #cccccc;
-    padding: 10px;
-    text-align: center;
-}
-
-tr:nth-child(even) {
-    background-color: #f2f2f2;
-}
-
-/* Forms */
-form {
-    padding: 20px;
-}
-
-input, select {
+select, input {
     padding: 10px;
     margin: 8px 0;
     border: 1px solid #cccccc;
     border-radius: 5px;
 }
 
-input:focus, select:focus {
-    border-color: var(--accent-color);
+/* Match Cards using CSS Grid */
+.match-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
 }
 
-/* Booking Summary */
+.match-card {
+    background-color: #f9f9f9;
+    border-left: 5px solid var(--accent-color);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px lightgray;
+}
+
+.match-card h3 {
+    color: var(--accent-color);
+}
+
+/* List View */
+.match-grid.list-view {
+    display: flex;
+    flex-direction: column;
+}
+
+.match-grid.list-view .match-card {
+    width: 100%;
+}
+
+/* Booking Form */
+form {
+    padding: 20px;
+    text-align: center;
+}
+
 aside {
     background-color: #fff3e6;
     padding: 20px;
@@ -132,13 +177,30 @@ aside {
     box-shadow: 0 2px 5px lightgray;
 }
 
-/* Guidelines */
+/* Guidelines using CSS Grid */
+.guidelines-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
 article {
     background-color: #f9f9f9;
-    padding: 15px;
-    margin: 10px 0;
+    padding: 20px;
     border-left: 5px solid var(--accent-color);
     border-radius: 5px;
+}
+
+/* Toast */
+#toast {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 15px 25px;
+    border-radius: 5px;
+    z-index: 2000;
 }
 
 /* Footer */
@@ -147,5 +209,74 @@ footer {
     color: white;
     text-align: center;
     padding: 20px;
-    margin-top: 20px;
+}
+
+/* Tablet Responsive Layout */
+@media screen and (max-width: 768px) {
+
+    .match-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .guidelines-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .navbar {
+        padding: 15px;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+}
+
+/* Mobile Responsive Layout */
+@media screen and (max-width: 600px) {
+
+    .navbar {
+        flex-wrap: wrap;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        padding: 15px 0;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .match-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .guidelines-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 25px;
+    }
+
+    section {
+        margin: 15px 10px;
+        padding: 20px;
+    }
+
+    .controls {
+        flex-direction: column;
+    }
+
+    .controls select,
+    .controls button {
+        width: 100%;
+    }
 }
